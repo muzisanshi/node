@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>关于我们</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="幻月传媒">
+	<link rel="stylesheet" type="text/css" href="./css/app.css">
+	<link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon" />
+	<!-- center-simple/flash/loading-bar/minimal -->
+	<link rel="stylesheet" type="text/css" href="./js/pace-1.0.2/themes/blue/pace-theme-center-simple.css">
+	<style type="text/css">
+		.main{background-color: white;padding-bottom: 0px;}
+		.about-area{
+			background-color: white;
+		}
+		.content-item{
+			text-align: left;
+			margin-top: 50px;
+			padding: 0px 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+
+			<div style="position: relative;">
+				<div class="logo">
+					<img src="./image/home/logo.png">
+				</div>
+				<div style="display: inline-block;position: absolute;right: 7%;">
+					<div class="h-item" data-href="home.html?position=home-area">
+						<label>首页&nbsp;&nbsp;/&nbsp;&nbsp;<span>HOME</span></label>
+						<span class="line"></span>
+					</div>
+					<div class="h-item" data-href="home.html?position=service-area">
+						<label>服务&nbsp;&nbsp;/&nbsp;&nbsp;<span>SERVICE</span></label>
+						<span class="line"></span>
+					</div>
+					<div class="h-item" data-href="home.html?position=ip-area">
+						<label>IP案例&nbsp;&nbsp;/&nbsp;&nbsp;<span>IP SHOW</span></label>
+						<span class="line"></span>
+					</div>
+					<div class="h-item" data-href="join_us.html">
+						<label>艺人招募&nbsp;&nbsp;/&nbsp;&nbsp;<span>RECRUITMENT</span></label>
+						<span class="line"></span>
+					</div>
+					<div class="h-item active">
+						<label>关于我们&nbsp;&nbsp;/&nbsp;&nbsp;<span>ABOUT US</span></label>
+						<span class="line"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="home-area">
+			<div class="content">
+				<img src="./image/about/top.png" class="big-img">
+			</div>
+		</div>
+		<div class="area about-area">
+
+			<div class="content">
+				<img src="./image/about/content.png" style="width: 100%;">
+			</div>
+		</div>
+		<div class="foot">
+			<div class="foot-content">
+				<p>前卫洒脱的创新空间</p>
+				<p><span style="color: #FD746C;">幻月传媒</span>等你来发现</p>
+				<div class="info" style="margin-top: 120px;">
+					<div class="map">
+						<iframe src="./html/map.html" scrolling="no"></iframe>
+					</div>
+					<div class="detail">
+						<div class="d-item">
+							<img src="./image/about/address.png">
+							<div>成都市高新区天府大道中段530号东方希望天祥广场2栋2213(地铁1号线世纪城站B口出)</div>
+						</div>
+						<div class="d-right">
+							<div class="d-item small">
+								<img src="./image/about/tel.png">
+								<div>028-86138906</div>
+							</div>
+							<div class="d-item small" style="margin-top: 20px;">
+								<img src="./image/about/user.png">
+								<div>王经理&nbsp;&nbsp;15708433774</div>
+							</div>
+							<div class="d-item small" style="margin-top: 20px;">
+								<img src="./image/about/mail.png">
+								<div>huanyuecd@sina.com</div>
+							</div>
+						</div>
+						<img src="./image/about/qrcode.png" class="qrcode" style="position: absolute;width: 90px;height: 90px;bottom: 60px;right: 30px;">
+					</div>
+				</div>
+				<div class="icp">
+					蜀ICP备17002986号
+				</div>
+			</div>
+		</div>
+		<!-- 回到顶部 -->
+		<div class="to-top">
+			<div id="toTop">
+				<div class="arrow">
+					<div class="arrow-item top border-gray-ani" data-color="white"></div>
+					<div class="arrow-item bottom border-white-ani" data-color="gray"></div>
+				</div>
+				<div>回到顶层</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<!-- <script type="text/javascript" src="./js/pace-1.0.2/pace.min.js"></script> -->
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript">
+	$(function(){
+		APP.init();
+		APP.switchTabs(".h-item","active");
+		APP.handleHeader(".header");
+		$("#toTop").click(function(){
+			APP.toTop();
+		});
+		APP.onScroll(function(){
+			if($("html")[0].scrollHeight-($("html").scrollTop()+$(window).height())<=100){
+				$(".to-top").show();
+			}else{
+				$(".to-top").hide();
+			}
+		});
+
+		APP.toTop(100);
+	});
+</script>
+</html>

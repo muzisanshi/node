@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>幻月传媒</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="幻月传媒">
+	<link rel="stylesheet" type="text/css" href="./css/app.css">
+	<link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+	<div class="launcher">
+		<div class="launcher-content">
+			<img src="./image/home/logo.png">
+			<div class="letters">
+				<label class="bottom">+ANTISELENA+</label>
+				<label class="top">+ANTISELENA+</label>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript">
+	$(function(){
+		APP.init();
+		APP.showLauncher();
+		$(".top").animate({
+			width:$(".bottom").width()
+		},2000);
+		setTimeout(function(){
+			// 跳转到首页
+			window.location = "home.html";
+		},2000);
+	});
+</script>
+</html>

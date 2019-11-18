@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>幻月传媒</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="幻月传媒">
+	<link rel="stylesheet" type="text/css" href="./css/app.css">
+	<link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon" />
+	<!-- center-simple/flash/loading-bar/minimal -->
+	<link rel="stylesheet" type="text/css" href="./js/pace-1.0.2/themes/blue/pace-theme-center-simple.css">
+	<link rel="stylesheet" type="text/css" href="./js/scrollbar/jquery.mCustomScrollbar.css">
+	<style type="text/css">
+		.main{padding-bottom: 0px;}
+		.d-arrow{
+			display: inline-block;vertical-align: middle;margin-left: 7px;margin-top: -5px;
+		}
+		.d-arrow .arrow-item:first-child{
+			width: 8px;height: 8px;border-right: 2px solid;border-bottom: 2px solid;transform: rotate(45deg);border-color: rgb(255,255,255);
+		}
+		.d-arrow .arrow-item:nth-child(2){
+			width: 8px;height: 8px;border-right: 2px solid;border-bottom: 2px solid;transform: rotate(45deg);border-color: rgb(37,34,34);
+		}
+		#pos,#year{
+			-webkit-transform:scale(0.9);
+			-moz-transform:scale(0.9);
+			-o-transform:scale(0.9);
+			-ms-transform:scale(0.9);
+			transform: scale(0.9);
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+
+			<div style="position: relative;">
+				<div class="logo">
+					<img src="./image/home/logo.png">
+				</div>
+				<div style="display: inline-block;position: absolute;right: 7%;">
+
+					<div class="h-item active" data-tab="home-area">
+						<label>首页&nbsp;&nbsp;/&nbsp;&nbsp;<span>HOME</span></label>
+						<span class="line"></span>
+					</div>
+					<div class="h-item" data-tab="service-area">
+						<label>服务&nbsp;&nbsp;/&nbsp;&nbsp;<span>SERVICE</span></label>
+						<span class="line"></span>
+					</div>
+					<div class="h-item" data-tab="ip-area">
+						<label>IP案例&nbsp;&nbsp;/&nbsp;&nbsp;<span>IP SHOW</span></label>
+						<span class="line"></span>
+					</div>
+					<div class="h-item" data-href="join_us.html">
+						<label>艺人招募&nbsp;&nbsp;/&nbsp;&nbsp;<span>RECRUITMENT</span></label>
+						<span class="line"></span>
+					</div>
+					<div class="about h-item" data-href="about.html">
+						<label>关于我们&nbsp;&nbsp;/&nbsp;&nbsp;<span>ABOUT US</span></label>
+						<span class="line"></span>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="home-area">
+			<div class="content" style="position: relative;">
+				<img src="./image/home/top.png" class="big-img">
+				<img src="./image/home/banner.png" class="big-img" style="width: 80%;">
+
+				<div class="date" style="position: absolute;bottom: 21%;width: 100%;background-color: transparent;">
+					<div class="d-wrapper" style="position: relative;">
+						<div class="mouse" style="width: 24px;margin: 0 auto;">
+							<img src="./image/home/mouse.png" style="width: 24px;">
+							<!-- 向下指引 -->
+							<div class="d-arrow">
+								<div class="arrow-item top border-gray-ani" data-color="white"></div>
+								<div class="arrow-item bottom border-white-ani" data-color="gray"></div>
+							</div>
+						</div>
+						<div class="date" style="position: absolute;background-color: transparent;color: white;right: 18%;bottom: -10px;">
+							<div id="day" style="font-size: 40px;display: inline-block;">00</div>
+							<div class="addr-date" style="display: inline-block;">
+								<div class="address" style="position: relative;top: 5px;">
+									<img src="./image/home/climate.png" style="width: 8px;">
+									<p id="pos" style="font-size: 12px;">未知</p>
+								</div>
+								<div class="year">
+									<p id="year" style="font-size: 12px;">0000&nbsp;/&nbsp;00</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="area service-area">
+			<div class="title">
+				<label>我们的服务</label>
+				<label></label>
+				<label style="letter-spacing: 3px;position: relative;top: 10px;margin-top: 10px;">OUR SERVICE</label>
+				<img src="./image/home/xingqiu.png" style="margin-top: 20px;">
+			</div>
+			<div class="content" style="margin-top: -40px; width: calc(100% * 10 / 7); margin-left: calc(-100% * 3 / 14);">
+				<img src="./image/home/middle.png" class="big-img" style="width: 100%;">
+			</div>
+
+			<div class="title">
+				<label>机会没耐心<span>等待</span>&nbsp;&nbsp;冒险让我们<span>重生</span></label>
+				<label></label>
+				<label style="position: relative;top: 10px;margin-top:10px;">幻月全方位传媒矩阵服务</label>
+				<img src="./image/home/xingqiu.png" style="margin-top: 20px;">
+			</div>
+			<div class="content scroll">
+				<div class="scroll-view">
+					<div class="tier">
+						<div class="t-item">
+							<img src="./image/home/ip_create.png" class="icon-img">
+							<p>IP打造</p>
+							<p>IP create</p>
+						</div>
+						<div class="t-item">
+							<img src="./image/home/net_hot.png" class="icon-img">
+							<p>网红孵化</p>
+							<p>Internet celebrity</p>
+						</div>
+						<div class="t-item">
+							<img src="./image/home/short_video.png" class="icon-img">
+							<p>短视频拍摄</p>
+							<p>Short Video</p>
+						</div>
+
+						<div class="t-item">
+							<img src="./image/home/business_represent.png" class="icon-img">
+							<p>商业代言</p>
+							<p>Business Represent</p>
+						</div>
+						<div class="t-item">
+							<img src="./image/home/movie_and_tv.png" class="icon-img">
+							<p>影视广告</p>
+							<p>Movie And TV</p>
+						</div>
+					</div>
+					<div class="tier">
+						<div class="t-item">
+							<img src="./image/home/ip_operate.png" class="icon-img">
+							<p>IP代运营</p>
+							<p>Operate</p>
+						</div>
+						<div class="t-item">
+							<img src="./image/home/ecommerce_brodcast.png" class="icon-img">
+							<p>电商直播</p>
+							<p>Live broadcast</p>
+						</div>
+						<div class="t-item">
+							<img src="./image/home/brand_collection.png" class="icon-img">
+							<p>品牌全案</p>
+							<p>Brand</p>
+						</div>
+
+						<div class="t-item">
+							<img src="./image/home/esports.png" class="icon-img">
+							<p>电子竞技</p>
+							<p>E-sports</p>
+						</div>
+						<div class="t-item">
+							<img src="./image/home/evariety.png" class="icon-img">
+							<p>网络综艺</p>
+							<p>E-variety</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="area ip-area">
+			<div class="title">
+				<label>IP&nbsp;&nbsp;案例</label>
+				<label></label>
+				<label style="position: relative;top: 10px;margin-top:10px;">匠心独运，打造流量巨人</label>
+				<img src="./image/home/xingqiu.png" style="margin-top: 20px;">
+			</div>
+			<div class="content">
+				<div class="video">
+					<div class="poster" data-index="0">
+						<div style="position: relative;">
+							<img id="poster" src="./image/home/chuanzhang2.png">
+							<img id="play" src="./image/home/play.png" style="position: absolute;width: 50px;height: 50px;z-index: 2;left: calc(50% - 25px);top: calc(50% - 25px);background-color: transparent;">
+						</div>
+					</div>
+					<div class="video-info">
+						<p class="v-title"><span id="title">韩船长漂流记</span><img src="./image/home/quote.png" style="position: relative;top: -7px;margin-left: 10px;width: 24px;"></p>
+						<p class="v-fans">粉丝数：<span id="fans" style="color: #FC39C3;">78w</span><span>抖音号：<span id="douyin">2183599946</span></span></p>
+						<p class="v-content">《韩船长漂流记》是我们打造的优质互联网内容IP。主人公韩船长卖房买船，以环球航海为主题，从瑞典的斯德哥尔摩出发，驾船探寻世界各地的生活，创造与年龄无关的青春。</p>
+						<div class="video-platform">
+							<label>分发平台：</label>
+							<img src="./image/home/douyin.png">
+							<img src="./image/home/huoshan.png">
+							<img src="./image/home/xigua.png">
+							<img src="./image/home/youku.png">
+							<img src="./image/home/toutiao.png">
+						</div>
+					</div>
+					<div class="videos">
+						<div class="video-item active">
+							<div style="position: relative;">
+								<img src="./image/home/captain_avatar.png">
+								<div class="cover" style="position: absolute;width: 60px;height: 60px;top:0px;border-radius: 50%;background-color: rgba(0,0,0,0.5);left: calc(50% - 30px);"></div>
+							</div>
+							<p>韩船长漂流记</p>
+						</div>
+						<div class="video-item">
+							<div style="position: relative;">
+								<img src="./image/home/baoli_wuye.png">
+								<div class="cover" style="position: absolute;width: 60px;height: 60px;top:0px;border-radius: 50%;background-color: rgba(0,0,0,0.5);left: calc(50% - 30px);"></div>
+							</div>
+							<p>保利物业集团</p>
+						</div>
+						<div class="video-item">
+							<div style="position: relative;">
+								<img src="./image/home/blue_walker.png">
+								<div class="cover" style="position: absolute;width: 60px;height: 60px;top:0px;border-radius: 50%;background-color: rgba(0,0,0,0.5);left: calc(50% - 30px);"></div>
+							</div>
+							<p>深蓝行者</p>
+						</div>
+					</div>
+				</div>
+				<div class="video-bar"></div>
+				<div class="devide" style="margin-top: 60px;">
+					<img src="./image/home/banner2.png" style="width: 100%;">
+				</div>
+			</div>
+		</div>
+		<div class="area partner-area">
+			<div class="title">
+				<label>合作伙伴</label>
+				<label></label>
+				<label style="position: relative;top: 10px;margin-top:10px;">PARTENERS</label>
+				<img src="./image/home/xingqiu.png" style="margin-top: 20px;">
+			</div>
+			<div class="content" style="padding-top: 90px;padding-bottom: 30px;">
+				<img src="./image/home/part1.png" class="part-img">
+				<img src="./image/home/part2.png" class="part-img">
+				<img src="./image/home/part3.png" class="part-img">
+				<img src="./image/home/part4.png" class="part-img">
+				<img src="./image/home/part5.png" class="part-img">
+				<img src="./image/home/part6.png" class="part-img">
+
+				<img src="./image/home/part7.png" class="part-img">
+				<img src="./image/home/part8.png" class="part-img">
+				<img src="./image/home/part9.png" class="part-img">
+				<img src="./image/home/part10.png" class="part-img">
+				<img src="./image/home/part11.png" class="part-img">
+				<img src="./image/home/part12.png" class="part-img">
+			</div>
+		</div>
+
+		<div class="foot">
+			<div class="foot-content">
+				<p>前卫洒脱的创新空间</p>
+				<p><span style="color: #FD746C;">幻月传媒</span>等你来发现</p>
+				<div class="info" style="margin-top: 120px;">
+					<div class="map">
+						<iframe src="./html/map.html" scrolling="no"></iframe>
+					</div>
+					<div class="detail">
+						<div class="d-item">
+							<img src="./image/about/address.png">
+							<div>成都市高新区天府大道中段530号东方希望天祥广场2栋2213(地铁1号线世纪城站B口出)</div>
+						</div>
+						<div class="d-right">
+							<div class="d-item small">
+								<img src="./image/about/tel.png">
+								<div>028-86138906</div>
+							</div>
+							<div class="d-item small" style="margin-top: 20px;">
+								<img src="./image/about/user.png">
+								<div>王经理&nbsp;&nbsp;15708433774</div>
+							</div>
+							<div class="d-item small" style="margin-top: 20px;">
+								<img src="./image/about/mail.png">
+								<div>huanyuecd@sina.com</div>
+							</div>
+						</div>
+						<img src="./image/about/qrcode.png" class="qrcode" style="position: absolute;width: 90px;height: 90px;bottom: 60px;right: 30px;">
+					</div>
+				</div>
+				<div class="icp">
+					蜀ICP备17002986号
+				</div>
+			</div>
+		</div>
+		<!-- 回到顶部 -->
+		<div class="to-top">
+			<div id="toTop">
+				<div class="arrow">
+					<div class="arrow-item top border-gray-ani" data-color="white"></div>
+					<div class="arrow-item bottom border-white-ani" data-color="gray"></div>
+				</div>
+				<div>回到顶层</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 视频播放弹窗 -->
+	<div class="video-play">
+		<div class="video-player">
+			<img src="./image/home/quit.png" class="close">
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<!-- <script type="text/javascript" src="./js/pace-1.0.2/pace.min.js"></script> -->
+<script type="text/javascript" src="./js/scrollbar/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?ak=YrXSCjgAt3Qu06crwUcX7TIGtjjywlw8"></script>
+<script type="text/javascript">
+	$(function(){
+		APP.init();
+		APP.switchTabs(".h-item","active");
+		APP.switchTabs(".video-item","active",function(index){
+			$(".poster").data("index",index);
+			APP.switchVideo(index);
+		});
+		APP.handleHeader(".header");
+
+		APP.getCurDate(function(date){
+			$("#day").text(date.day<10?"0"+date.day:date.day);
+			$("#year").html(date.year+"&nbsp;/&nbsp;"+date.month);
+		});
+
+		APP.getLocation(function(ret){
+			if(ret){
+				$("#pos").text(ret.content.address_detail.city);
+			}
+		});
+
+		$(".poster").click(function(){
+			var index = $(this).data("index");
+			APP.showVideo(index);
+		});
+
+		$(".close").click(function(){
+			APP.closeVideo();
+		});
+
+		APP.listenKey("esc",function(){
+			APP.closeVideo();
+		});
+
+		// 判断是否需要跳转到指定页面
+		var pos = APP.getWebParam("position");
+		if(pos){
+			$(".h-item").removeClass("active");
+			$(".h-item[data-tab="+pos+"]").addClass("active");
+			APP.scrollTo("."+pos,50);
+		}else{
+			APP.toTop(100);
+		}
+
+		$("#toTop").click(function(){
+			APP.toTop();
+		});
+		APP.onScroll(function(){
+			if($("html")[0].scrollHeight-($("html").scrollTop()+$(window).height())<=100){
+				$(".to-top").show();
+			}else{
+				$(".to-top").hide();
+			}
+		});
+
+		$(".logo img").click(function(){
+			$.ajax({
+				url:"http://127.0.0.1:8080/api/getServerInfo",
+				method:"post",
+				success:function(ret){
+					console.log(JSON.stringify(ret));
+				},
+				error:function(err){
+					
+				}
+			});
+		});
+	});
+</script>
+</html>
