@@ -319,16 +319,18 @@
 <script type="text/javascript" src="./js/app.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?ak=YrXSCjgAt3Qu06crwUcX7TIGtjjywlw8"></script>
 <script type="module">
-	import moduleName from "./js/m1.js";
-	console.log("moduleName:"+moduleName);
+	import {mn as MN} from "./js/m1.js";
+	console.log("module this:"+this);
+	console.log("moduleName:"+MN);
 </script>
 <script type="text/javascript">
-	console.log("test msg");
+	console.log("global this:"+this);
 </script>
 <script type="text/javascript">
 	window.onload = function(){
 		console.log("page loaded")
 	}
+	
 	$(function(){
 		console.log("DOM loaded")
 		APP.init();

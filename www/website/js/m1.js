@@ -1,3 +1,5 @@
 
 let moduleName = "m1";
-export default moduleName;
+export {
+	moduleName as mn
+};

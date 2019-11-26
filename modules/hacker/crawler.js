@@ -1,5 +1,6 @@
 
 let Crawler = require('crawler');
+let fs = require('fs');
 let cl = new Crawler({
 	callback:(err,res,done)=>{
 		let imgs = res.$("img");
