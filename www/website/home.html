@@ -318,8 +318,19 @@
 <script type="text/javascript" src="./js/scrollbar/jquery.mCustomScrollbar.js"></script>
 <script type="text/javascript" src="./js/app.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?ak=YrXSCjgAt3Qu06crwUcX7TIGtjjywlw8"></script>
+<script type="module">
+	import moduleName from "./js/m1.js";
+	console.log("moduleName:"+moduleName);
+</script>
 <script type="text/javascript">
+	console.log("test msg");
+</script>
+<script type="text/javascript">
+	window.onload = function(){
+		console.log("page loaded")
+	}
 	$(function(){
+		console.log("DOM loaded")
 		APP.init();
 		APP.switchTabs(".h-item","active");
 		APP.switchTabs(".video-item","active",function(index){
@@ -373,18 +384,36 @@
 			}
 		});
 
-		$(".logo img").click(function(){
-			$.ajax({
-				url:"http://127.0.0.1:8080/api/getServerInfo",
-				method:"post",
-				success:function(ret){
-					console.log(JSON.stringify(ret));
-				},
-				error:function(err){
-					
-				}
-			});
-		});
+		// let timeout = async function(){
+	 //      	await new Promise((resolve,reject)=>{
+	 //          	setTimeout(()=>{
+	 //            	resolve("after timeout2");
+	 //          	}, 5000);
+	 //       	});
+	 //        console.log("after timeout1");
+	 //        // return "after timeout3";
+	 //    };
+
+	 //    let p = timeout();
+	 //    p.then((r)=>{
+	 //       	console.log(r);
+	 //    })
+	 class Father{
+	constructor(){
+		this.age = 40;
+	}
+}
+class Son extends Father{
+	constructor(){
+		super();
+		console.log(parent.age);
+		this.age = 20;
+	}
+}
+
+console.log(new Son());
+	  	
+
 	});
 </script>
 </html>

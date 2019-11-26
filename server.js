@@ -4,7 +4,7 @@ let fs = require('fs');
 let path = require('path');
 let app = new koa();
 
-app.use(koaStatic(__dirname+'/website'));
+app.use(koaStatic(__dirname+'/www/website'));
 app.use(async (ctx) => {
 	if(ctx.path=="/api/getServerInfo"){
 		ctx.response.status = 200;
