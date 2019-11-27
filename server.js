@@ -15,7 +15,6 @@ app.use(async (ctx) => {
 
 app.listen(8081,()=>{
 	console.log("server ok");
-	
 });
 
 

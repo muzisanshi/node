@@ -9,10 +9,10 @@ server.listen(port, () => {
 });
 
 io.on('connection', socket => {
-
+	
     socket.on('msg', data => {
         console.log('msg:'+data);
         socket.emit('msg','我是来自服务端的socket消息');
     });
-
+    
 });

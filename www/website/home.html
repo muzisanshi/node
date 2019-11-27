@@ -319,6 +319,7 @@
 <script type="text/javascript" src="./js/app.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?ak=YrXSCjgAt3Qu06crwUcX7TIGtjjywlw8"></script>
 <script type="text/javascript" src="./js/socketio/socket.io.js"></script>
+<script type="text/javascript" src="./js/cryptojs/crypto-js.js"></script>
 <script type="module">
 	import {mn as MN} from "./js/m1.js";
 	console.log("module this:"+this);
@@ -390,17 +391,28 @@
 		// websocket测试
 	  	$(".logo img").click(function(){
 	  		// 长连接
-		  	var socket = io('http://127.0.0.1:8082');
-			socket.on('connect', function(){
-				console.log("socket connected");
-				socket.emit("msg","我是来自客户端的socket消息");
-			});
-			socket.on('msg', function(data){
-				console.log("msg:"+data);
-			});
-			socket.on('disconnect', function(){
-				console.log("socket disconnect");
-			});
+			// var socket = io('http://127.0.0.1:8082');
+			// socket.on('connect', function(){
+			// 	console.log("socket connected");
+			// 	socket.emit("msg","我是来自客户端的socket消息");
+			// });
+			// socket.on('msg', function(data){
+			// 	console.log("msg:"+data);
+			// });
+			// socket.on('disconnect', function(){
+			// 	console.log("socket disconnect");
+			// });
+			
+			// crypto解密
+			// key ���ɤ���g0
+			// content 0153dbacdadded28f2a8ad9f0b286fe0f6fc877af6fd7abb418931fc905409a;
+			// console.log(CryptoJS.lib.SerializableCipher.decrypt)
+			let key = "���ɤ���g0";
+			let content = "0153dbacdadded28f2a8ad9f0b286fe0f6fc877af6fd7abb418931fc905409a";
+			let hex = CryptoJS.format.Hex.parse(content);
+			console.log(CryptoJS.algo.HMAC)
+			let plain = CryptoJS.lib.SerializableCipher.decrypt(CryptoJS.algo.HMAC,hex,key);
+			// console.log("plain:"+plain);
 	  	});
 
 	});
