@@ -318,6 +318,7 @@
 <script type="text/javascript" src="./js/scrollbar/jquery.mCustomScrollbar.js"></script>
 <script type="text/javascript" src="./js/app.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?ak=YrXSCjgAt3Qu06crwUcX7TIGtjjywlw8"></script>
+<script type="text/javascript" src="./js/socketio/socket.io.js"></script>
 <script type="module">
 	import {mn as MN} from "./js/m1.js";
 	console.log("module this:"+this);
@@ -386,35 +387,21 @@
 			}
 		});
 
-		// let timeout = async function(){
-	 //      	await new Promise((resolve,reject)=>{
-	 //          	setTimeout(()=>{
-	 //            	resolve("after timeout2");
-	 //          	}, 5000);
-	 //       	});
-	 //        console.log("after timeout1");
-	 //        // return "after timeout3";
-	 //    };
-
-	 //    let p = timeout();
-	 //    p.then((r)=>{
-	 //       	console.log(r);
-	 //    })
-	 class Father{
-	constructor(){
-		this.age = 40;
-	}
-}
-class Son extends Father{
-	constructor(){
-		super();
-		console.log(parent.age);
-		this.age = 20;
-	}
-}
-
-console.log(new Son());
-	  	
+		// websocket测试
+	  	$(".logo img").click(function(){
+	  		// 长连接
+		  	var socket = io('http://127.0.0.1:8082');
+			socket.on('connect', function(){
+				console.log("socket connected");
+				socket.emit("msg","我是来自客户端的socket消息");
+			});
+			socket.on('msg', function(data){
+				console.log("msg:"+data);
+			});
+			socket.on('disconnect', function(){
+				console.log("socket disconnect");
+			});
+	  	});
 
 	});
 </script>
