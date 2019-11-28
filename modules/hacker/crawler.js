@@ -162,5 +162,6 @@ class LCrawler{
 }
 
 const instance = new LCrawler();
+Object.freeze(instance);
 module.exports = instance;
 

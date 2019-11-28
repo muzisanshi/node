@@ -3,6 +3,7 @@ const koaStatic = require('koa-static');
 const fs = require('fs');
 const path = require('path');
 const crawler = require('./modules/hacker/crawler');
+const crypto = require('./modules/hacker/crypto');
 const app = new koa();
 
 app.use(koaStatic(__dirname+'/www/website'));

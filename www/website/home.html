@@ -403,16 +403,12 @@
 			// 	console.log("socket disconnect");
 			// });
 			
-			// crypto解密
-			// key ���ɤ���g0
-			// content 0153dbacdadded28f2a8ad9f0b286fe0f6fc877af6fd7abb418931fc905409a;
-			// console.log(CryptoJS.lib.SerializableCipher.decrypt)
-			let key = "���ɤ���g0";
-			let content = "0153dbacdadded28f2a8ad9f0b286fe0f6fc877af6fd7abb418931fc905409a";
-			let hex = CryptoJS.format.Hex.parse(content);
-			console.log(CryptoJS.algo.HMAC)
-			let plain = CryptoJS.lib.SerializableCipher.decrypt(CryptoJS.algo.HMAC,hex,key);
-			// console.log("plain:"+plain);
+			// crypto aes对称解密
+			let key = '8767cda83116fcad5e44b5f68266e487';
+			let crypted = '6bdd31832ad233dd2e3d8c754f20e3e1';
+
+			let decrypted = CryptoJS.AES.decrypt(crypted, key);
+			console.log(decrypted)
 	  	});
 
 	});
