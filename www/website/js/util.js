@@ -5,12 +5,13 @@
 ;(function(context){
 
 	function Util(){};
-
+	
 	var prototype = {
 
 		BAIDU_AK:"YrXSCjgAt3Qu06crwUcX7TIGtjjywlw8",
 		KEYS:{
-			"esc":27
+			"esc":27,
+			'enter':13,
 		},
 
 		// 页面滚动到指定元素位置
