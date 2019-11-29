@@ -320,6 +320,7 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?ak=YrXSCjgAt3Qu06crwUcX7TIGtjjywlw8"></script>
 <script type="text/javascript" src="./js/socketio/socket.io.js"></script>
 <script type="text/javascript" src="./js/cryptojs/crypto-js.js"></script>
+<script type="text/javascript" src="./js/util.js"></script>
 <script type="module">
 	import {mn as MN} from "./js/m1.js";
 	console.log("module this:"+this);
@@ -403,12 +404,18 @@
 			// 	console.log("socket disconnect");
 			// });
 			
-			// crypto aes对称解密
-			let key = '8767cda83116fcad5e44b5f68266e487';
-			let crypted = '6bdd31832ad233dd2e3d8c754f20e3e1';
 
-			let decrypted = CryptoJS.AES.decrypt(crypted, key);
-			console.log(decrypted)
+			// crypto aes对称解密
+		 	let plan = 'Li8728428850';
+		 	let key = '6675636b796f756675636b796f756675636b796f756675636b796f756675636b';
+		    let iv = '6675636b796f756675636b796f756675';
+		    // 16进制
+		    let crypted = util.aesEncrypt(plan,key,iv);
+		    console.log(crypted);
+		    // 明文
+		    let decrypted = util.aesDecrypt(crypted,key,iv);
+		    console.log(decrypted);
+
 	  	});
 
 	});
