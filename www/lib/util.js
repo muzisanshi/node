@@ -158,7 +158,7 @@
 	        return decrypted.toString(CryptoJS.enc.Utf8);
 	    },
 
-
+	    
 
 	};
 

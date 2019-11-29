@@ -9,7 +9,7 @@ class LCrypto {
 		return await new Promise((resolve,reject)=>{
 			crypto.randomBytes(byteNum, (err, buf) => {
 		  		if(err){
-		  			reject(err)
+		  			reject(err);
 		  		}
 		  		if(buf){
 		  			resolve(buf.toString('hex'));
@@ -23,7 +23,7 @@ class LCrypto {
 		return await new Promise((resolve,reject)=>{
 			crypto.randomBytes(byteNum, (err, buf) => {
 		  		if(err){
-		  			reject(err)
+		  			reject(err);
 		  		}
 		  		if(buf){
 		  			resolve(buf);
