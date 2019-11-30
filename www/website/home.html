@@ -320,6 +320,7 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?ak=YrXSCjgAt3Qu06crwUcX7TIGtjjywlw8"></script>
 <script type="text/javascript" src="./js/socketio/socket.io.js"></script>
 <script type="text/javascript" src="./js/cryptojs/crypto-js.js"></script>
+<script type="text/javascript" src="./js/util.js"></script>
 <script type="module">
 	import {mn as MN} from "./js/m1.js";
 	console.log("module this:"+this);
@@ -403,12 +404,28 @@
 			// 	console.log("socket disconnect");
 			// });
 			
-			// crypto aes对称解密
-			let key = '8767cda83116fcad5e44b5f68266e487';
-			let crypted = '6bdd31832ad233dd2e3d8c754f20e3e1';
 
+			// crypto aes对称解密
+			// keyHex:6675636b6675636b6675636b6675636b6675636b6675636b6675636b6675636b
+			// ivHex:6675636b6675636b6675636b6675636b
+			// cryptedHex:64eb63cf7729a1c35848dae76b901f16
+
+		 	let plan = '5201314';
+		 	let key = '6675636b6675636b6675636b6675636b6675636b6675636b6675636b6675636b';
+		    let iv = '6675636b6675636b6675636b6675636b';
+		    // let crypted = '64eb63cf7729a1c35848dae76b901f16';
+		    // 16进制
+		    let crypted = util.aesEncrypt(plan,key,iv);
+		    console.log(crypted);
+		    // 明文
+		    let decrypted = util.aesDecrypt(crypted,key,iv);
+		    console.log(decrypted);
+
+<<<<<<< HEAD
 			let decrypted = CryptoJS.AES.decrypt(crypted, key);
 			alert(decrypted)
+=======
+>>>>>>> 612c339f3c73bb4293f3025aaf03c5f6abba8b23
 	  	});
 
 	});
