@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- 浏览器内核选择 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 移动端适配 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<title>html5demo</title>
+</head>
+<body>
+
+	<article>
+		我是文章<label>我是其他内容</label>
+	</article>
+
+	<div>
+		我是div
+	</div>
+
+	<aside>
+		<h4>Epcot Center</h4>
+	</aside>
+
+	<audio src="http://img-cdn.ohipic.com/sound/00/29/33/64/293364_79d42d959449d4f68aa316986405d667.mp3" autoplay controls preload>
+		您的浏览器不支持 audio 标签。
+	</audio>
+
+	<div>
+		<input list="cars" placeholder="嘿嘿" />
+		<datalist id="cars">
+			<option value="BMW">
+			<option value="Ford">
+			<option value="Volvo">
+		</datalist>
+	</div>
+
+	<details>
+		<summary>Copyright 2011.</summary>
+		<p>All pages and graphics on this web site are the property of W3School.</p>
+	</details>
+
+	<form>
+	  <fieldset style="border:none;padding: 0;">
+	    <!-- <legend>health information</legend> -->
+	    height: <input type="text" />
+	    weight: <input type="text" />
+	  </fieldset>
+	</form>
+
+	<figure>
+	  <p>黄浦江上的的卢浦大桥</p>
+	  <img src="favicon.ico" width="350" height="234" />
+	</figure>
+
+	<div>
+		<meter value="3" min="0" max="10">十分之三</meter>
+		<meter value="0.6">60%</meter> 
+	</div>
+
+	<nav>
+		<a href="index.asp">Home</a>
+		<a href="html5_meter.asp">Previous</a>
+		<a href="html5_noscript.asp">Next</a>
+	</nav>
+
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+		<input type="range" id="a" value="50">100
+		+<input type="number" id="b" value="50">
+		=<output name="x" for="a b"></output>
+	</form>
+
+	<section>
+	  	<h1>PRC</h1>
+	  	<p>The People's Republic of China was born in 1949...</p>
+	</section>
+
+	<div>
+		<p>我们在每天早上 <time>9:00</time> 开始营业。</p>
+		<p>我在 <time datetime="2008-02-14">情人节</time> 有个约会。</p>
+	</div>
+	
+	<code>
+		var name = "lilei";
+		console.log(name)
+	</code>
+
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+		// if(navigator.geolocation){
+		// 	navigator.geolocation.getCurrentPosition(function(location){
+		// 		alert("经纬度:"+location.coords.longitude+","+location.coords.latitude)
+		// 	})
+		// }
+		// sessionStorage.setItem("name","lilei");
+		// alert(sessionStorage.getItem("name"))
+
+		// var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+		// var msg;
+		 
+		// db.transaction(function (tx) {
+		//     tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+		//     tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "菜鸟教程")');
+		//     tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "www.runoob.com")');
+		//     msg = '<p>数据表已创建，且插入了两条数据。</p>';
+		//     document.querySelector('#status').innerHTML =  msg;
+		// });
+		 
+		// db.transaction(function (tx) {
+		// tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+		//     var len = results.rows.length, i;
+		//     msg = "<p>查询记录条数: " + len + "</p>";
+		//     document.querySelector('#status').innerHTML +=  msg;
+		 
+		//     for (i = 0; i < len; i++){
+		//         msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+		//         document.querySelector('#status').innerHTML +=  msg;
+		//     }
+		// }, null);
+		// });
+
+		var worker = new Worker('http://10.0.0.123:8081/js/worker.js');
+		worker.onmessage = function (event) {
+	  		console.log('Received message ' + event.data);
+	  		worker.postMessage("我是来自主线程的消息")
+	  		// 关闭worker
+	  		// worker.terminate();
+		};
+
+
+	}
+</script>
+</html>
