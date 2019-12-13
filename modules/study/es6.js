@@ -157,10 +157,10 @@ let timeout = async function(){
 	console.log("after timeout3");
 	return "ok"
 };
-let p = timeout();
-p.then((r)=>{
-	// console.log(r);
-})
+// let p = timeout();
+// p.then((r)=>{
+// 	// console.log(r);
+// })
 
 // set和map
 let set = new Set([1,2,3,4,5,6,"6"]);
@@ -203,7 +203,7 @@ class Father{
 		this.age = 40;
 	}
 	static func(){
-		console.log(this.age)
+		// console.log(this.age)
 	}
 }
 Father.age = 0;
@@ -218,7 +218,32 @@ class Son extends Father{
 }
 Son.age = 1;
 Son.myFunc();
-// console.log(new Son().age);
+
+
+
+let c = {
+	["#name"]:""
+};
+Object.defineProperty(c,"#name",{
+	configurable:false,
+	enumerable:false
+});
+Object.defineProperty(c,"name",{
+	enumerable:true,
+	configurable:true,
+	get:function(){
+		return this["#name"];
+	},
+	set:function(v){
+		this["#name"] = v+"_set";
+	}
+});
+c.name = "lilei";
+for(let key in c){
+	// console.log(key);
+}
+
+console.log(Object.getOwnPropertyDescriptor(c,'name'));
 
 
 

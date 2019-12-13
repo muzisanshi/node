@@ -122,6 +122,15 @@
 		    if(ag.toLowerCase().indexOf("trident") > -1){
 		    	return "IE";
 		    }
+		    if(ag.toLowerCase().indexOf("micromessenger") > -1){// 微信内置浏览器
+		    	return "WX";
+		    }
+		    if(ag.indexOf(' qq') > -1 && ag.indexOf('mqqbrowser') < 0){
+	            return "QQInner";
+	        }
+	        if(ag.indexOf('mqqbrowser') > -1 && ag.indexOf(" qq") < 0){
+	            return "QQ";
+	        }
 
 		    // 默认返回其他浏览器
 		    return "Other";
