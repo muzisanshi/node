@@ -392,17 +392,26 @@
 		// websocket测试
 	  	$(".logo img").click(function(){
 	  		// 长连接
-			// var socket = io('http://127.0.0.1:8082');
-			// socket.on('connect', function(){
-			// 	console.log("socket connected");
-			// 	socket.emit("msg","我是来自客户端的socket消息");
-			// });
-			// socket.on('msg', function(data){
-			// 	console.log("msg:"+data);
-			// });
-			// socket.on('disconnect', function(){
-			// 	console.log("socket disconnect");
-			// });
+			var socket = io('http://127.0.0.1:8082');
+			var socket2 = io('http://127.0.0.1:8082');
+			socket.on('connect', function(){
+				console.log("socket connected");
+				socket.emit("msg","我是来自客户端的socket消息");
+			});
+			socket.on('msg', function(data){
+				console.log("msg:"+data);
+			});
+			socket.on('disconnect', function(){
+				console.log("socket disconnect");
+			});
+
+			socket2.on('connect', function(){
+				console.log("socket2 connected");
+				socket2.emit("msg","我是来自客户端的socket2消息");
+			});
+			socket2.on('broadcast', function(data){
+				console.log("socket2监听到广播："+data);
+			});
 			
 
 			// crypto aes对称解密
@@ -410,16 +419,16 @@
 			// ivHex:6675636b6675636b6675636b6675636b
 			// cryptedHex:64eb63cf7729a1c35848dae76b901f16
 
-		 	let plan = '5201314';
-		 	let key = '6675636b6675636b6675636b6675636b6675636b6675636b6675636b6675636b';
-		    let iv = '6675636b6675636b6675636b6675636b';
-		    // let crypted = '64eb63cf7729a1c35848dae76b901f16';
-		    // 16进制
-		    let crypted = util.aesEncrypt(plan,key,iv);
-		    console.log(crypted);
-		    // 明文
-		    let decrypted = util.aesDecrypt(crypted,key,iv);
-		    console.log(decrypted);
+		 	// let plan = '5201314';
+		 	// let key = '6675636b6675636b6675636b6675636b6675636b6675636b6675636b6675636b';
+		  //   let iv = '6675636b6675636b6675636b6675636b';
+		  //   // let crypted = '64eb63cf7729a1c35848dae76b901f16';
+		  //   // 16进制
+		  //   let crypted = util.aesEncrypt(plan,key,iv);
+		  //   console.log(crypted);
+		  //   // 明文
+		  //   let decrypted = util.aesDecrypt(crypted,key,iv);
+		  //   console.log(decrypted);
 		    
 	  	});
 	  	

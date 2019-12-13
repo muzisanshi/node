@@ -137,11 +137,12 @@ obj2.a = "aa";
 let vv = "getr";
 obj2 = {
 	get getr(){
-	  return vv + (new Date()).toString();     
+	  return vv + (new Date()).toString();
 	},
 	set getr(v){
-	  return v + (new Date()).toString();
-	}
+		vv = v;
+	},
+	mname:'嘿嘿'
 }
 obj2.getr = vv;
 
@@ -242,7 +243,7 @@ c.name = "lilei";
 for(let key in c){
 	// console.log(key);
 }
-
+console.log(c.hasOwnProperty('name'));
 console.log(Object.getOwnPropertyDescriptor(c,'name'));
 
 

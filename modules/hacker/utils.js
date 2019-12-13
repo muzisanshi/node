@@ -1,30 +1,18 @@
 
-const Koa = require('koa');
-const Http = require('http');
 const SocketIo = require('socket.io');
 
-class Socket {
-
-	constructor(){
-		super();
-		this.app = new Koa();
-		this.server = Http.Server(this.app.callback());
-		this.io = SocketIo(this.server);
-	}
+class SocketManager {
 
 	// 启动服务
-	async start(port){
-		return await new Promise((resolve,reject)=>{
-			this.server.listen(port, () => {
-			     console.log(`socket run at : http://127.0.0.1:${port}`);
-			     resolve();
-			});
-		});
+	start(port){
+		this.io = SocketIo(port);
+		return this;
 	}
 
 	// 关闭所有socket
 	stop(){
 		this.io.close();
+		return this;
 	}
 
 	// 监听socket的消息
@@ -36,17 +24,17 @@ class Socket {
 		    });
 		    
 		});
+		return this;
 	}
 
-	// 广播给所有socket
-	broadcast(socket,data){
-		socket.emit(data);
-		socket.broadcast.emit(data);
+	// 广播消息给所有socket
+	broadcast(data){
+		this.io.sockets.emit('broadcast',data);
+		return this;
 	}
-
 
 }
 
 module.exports = {
-	Socket
+	SocketManager
 }
