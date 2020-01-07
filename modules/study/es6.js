@@ -145,6 +145,9 @@ obj2 = {
 	mname:'嘿嘿'
 }
 obj2.getr = vv;
+let target = {a:1};
+Object.assign(target,obj2)
+// console.log(Object.getOwnPropertyDescriptor(obj2,'getr'))
 
 
 // async异步操作

@@ -8,7 +8,7 @@ const crypto = require('./modules/hacker/crypto');
 const app = new koa();
 
 
-app.use(koaStatic(__dirname+'/www/website'));
+app.use(koaStatic(__dirname+'/www/website/html'));
 // app.use(koaStatic('/Users/mac/Documents/HASHREAL/hashreal.front/h5'));
 // app.use(koaStatic('/Users/mac/Documents/HASHREAL/hashreal.front/pc'));
 app.use(async (ctx) => {

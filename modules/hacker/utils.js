@@ -8,13 +8,13 @@ class SocketManager {
 		this.io = SocketIo(port);
 		return this;
 	}
-
+	
 	// 关闭所有socket
 	stop(){
 		this.io.close();
 		return this;
 	}
-
+	
 	// 监听socket的消息
 	listen(callback){
 		this.io.on('connection', socket => {

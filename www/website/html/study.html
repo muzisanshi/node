@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3学习</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.h1~h1{
+			color: red;
+		}
+		.h1+h1{
+			color: blue;
+		}
+		.whitespace[white~="fuck"]{
+			color: red;
+		}
+		.contain[contain^="yes"]{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="nabours">
+		<h1 class="h1">aaaaaaaaaaaaaa</h1>
+		<h1>aaaaaaaaaaaaaa</h1>
+		<h2>aaaaaaaaaaaaaa</h1>
+		<h1>aaaaaaaaaaaaaa</h1>
+	</div>
+	<div class="whitespace" white="fuck you whitespace">fuck you whitespace</div>
+	<div class="contain" contain="yes contain">yes i contain</div>
+</body>
+</html>
