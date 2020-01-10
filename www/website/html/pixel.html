@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>像素等概念</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<style type="text/css">
+		*{
+			font-family: '微软雅黑';
+		}
+		html{
+			font-size: 16px;
+		}
+		.bg-red{
+			background-color: red;
+		}
+		.item{
+			margin-bottom: 20px;
+			font-size: 16px;
+		}
+		.item .value{
+			color: blue;
+		}
+		.item .warn{
+			color: red;
+		}
+
+		#px{
+			width: 96px;
+			height: 96px;
+		}
+		#pc{
+			width: 6pc;
+			height: 6pc;
+		}
+		#pt{
+			width: 72pt;
+			height: 72pt;
+		}
+		#in{
+			width: 1in;
+			height: 1in;
+		}
+		#mm{
+			width: 25.4mm;
+			height: 25.4mm;
+		}
+		#cm{
+			width: 2.54cm;
+			height: 2.54cm;
+		}
+
+		#em{
+			width: 6em;
+			height: 6em;
+		}
+		#rem{
+			width: 6rem;
+			height: 6rem;
+		}
+		#percent{
+			width: 10%;
+			height:96px;
+		}
+		#vw{
+			width: 6vw;
+			height: 96px;
+		}
+	</style>
+</head>
+<body>
+	<div class="hint item">
+		<div>w3c规定的长度单位换算公式</div>
+		<div class="value">1in = 2.54cm = 25.4 mm = 72pt = 6pc = 96px</div>
+		<div class="warn">*注意* 1in、1cm、1px等不严格等于现实和实际的长度</div>
+	</div>
+	<div>
+		<div class="item">
+			<div class="title">系统设置的物理分辨率（物理像素 Dot）</div>
+			<div class="value" id="physical"></div>
+			<div class="warn">*注意* 计算出来和真实设置可能有误差，非真实物理分辨率</div>
+		</div>
+		<div class="item">
+			<div class="title">系统设置的逻辑分辨率（逻辑像素 Pixel）</div>
+			<div class="value" id="logic"></div>
+		</div>
+		<div class="item">
+			<div class="title">系统设置的物理分辨率 和 系统设置的逻辑分辨率比值（Ratio）</div>
+			<div class="value" id="ratio"></div>
+		</div>
+		<div class="item">
+			<div class="title">浏览器设置的PPI（Pixel Per Inch）</div>
+			<div class="value" id="dpi"></div>
+		</div>
+
+		<div class="item">
+			<div class="title">长度单位 px（当前显示96px）</div>
+			<div class="bg-red" id="px"></div>
+		</div>
+		<div class="item">
+			<div class="title">长度单位 pc（当前显示6pc）</div>
+			<div class="bg-red" id="pc"></div>
+		</div>
+		<div class="item">
+			<div class="title">长度单位 pt（当前显示72pt）</div>
+			<div class="bg-red" id="pt"></div>
+		</div>
+		<div class="item">
+			<div class="title">长度单位 in（当前显示1in）</div>
+			<div class="bg-red" id="in"></div>
+		</div>
+		<div class="item">
+			<div class="title">长度单位 mm（当前显示25.4mm）</div>
+			<div class="bg-red" id="mm"></div>
+		</div>
+		<div class="item">
+			<div class="title">长度单位 cm（当前显示2.54cm）</div>
+			<div class="bg-red" id="cm"></div>
+		</div>
+
+		<div class="item">
+			<div class="title">长度单位 em（当前显示6em）</div>
+			<div class="bg-red" id="em"></div>
+		</div>
+		<div class="item">
+			<div class="title">长度单位 rem（当前显示6rem）</div>
+			<div class="bg-red" id="rem"></div>
+		</div>
+		<div class="item">
+			<div class="title">长度单位 %（当前显示10%）</div>
+			<div class="bg-red" id="percent"></div>
+		</div>
+		<div class="item">
+			<div class="title">长度单位 vw（当前显示6vw）</div>
+			<div class="bg-red" id="vw"></div>
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+	function getDpi(){
+
+		var n = document.createElement( "DIV" );
+		n.style.cssText = "width:1in;height:1in;position:absolute;left:0px;top:0px;z-index:99;visibility:hidden";
+		document.body.appendChild(n);
+
+		var xPpi = parseInt(n.offsetWidth);
+		var yPpi = parseInt(n.offsetHeight);
+		n.parentNode.removeChild(n);
+
+		return {
+			xPpi:xPpi,
+			yPpi:yPpi
+		}
+	}
+
+	function cal(){
+		// 计算物理分辨率
+		var screenWidth = window.screen.width;
+		var screenHeight = window.screen.height;
+		var screenRatio = window.devicePixelRatio;
+		var screenPysicalWidth = screenWidth * screenRatio;
+		var screenPysicalHeight = screenHeight * screenRatio;
+
+		var dpi = getDpi();
+
+		return {
+			screenWidth:screenWidth,
+			screenHeight:screenHeight,
+			screenRatio:screenRatio,
+			screenPysicalWidth:screenPysicalWidth,
+			screenPysicalHeight:screenPysicalHeight,
+			xPpi:dpi.xPpi,
+			yPpi:dpi.yPpi,
+		}
+	}
+
+	function showInfo(info){
+		console.log('--------showInfo--------')
+		$('#physical').text(info.screenPysicalWidth + '*' + info.screenPysicalHeight);
+		$('#logic').text(info.screenWidth + '*' + info.screenHeight);
+		$('#ratio').text(parseFloat(info.screenRatio).toFixed(8));
+		$('#dpi').text('XPPI:' + info.xPpi + ' , YPPI:' + info.yPpi);
+	}
+
+	window.onload = function(){
+		console.log('页面加载完毕')
+		// 计算物理分辨率
+		var info = cal();
+		showInfo(info);
+	}
+
+	window.onresize = function(){
+		var info = cal();
+		showInfo(info);
+	}
+
+</script>
+</html>
+
+
+
+
