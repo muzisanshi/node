@@ -175,7 +175,7 @@ class LCrypto {
 		fs.writeFile(priPath,privateKey,'utf8',(err)=>{});
 		fs.writeFile(pubPath,publicKey,'utf8',(err)=>{});
 	}
-
+	
 }
 
 const instance = new LCrypto();

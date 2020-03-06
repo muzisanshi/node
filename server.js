@@ -8,7 +8,7 @@ const crypto = require('./modules/hacker/crypto');
 const app = new koa();
 
 
-app.use(koaStatic(__dirname+'/www/website/html'));
+app.use(koaStatic(__dirname+'/www/dist'));
 // app.use(koaStatic('/Users/mac/Documents/HASHREAL/hashreal.front/h5'));
 // app.use(koaStatic('/Users/mac/Documents/HASHREAL/hashreal.front/pc'));
 app.use(async (ctx) => {
@@ -18,8 +18,9 @@ app.use(async (ctx) => {
 	}
 });
 
-app.listen(8081,()=>{
-	console.log("server ok");
+let port = 8089;
+app.listen(port,()=>{
+	console.log("server ok,running at " + port);
 });
 
 

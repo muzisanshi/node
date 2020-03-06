@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="487px" height="7px" viewBox="0 0 487 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>矩形</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="9.96357686%" y1="2.3657088e-18%" x2="90.0971284%" y2="2.60198148e-19%" id="linearGradient-1">
+            <stop stop-color="#A6E6E6" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#A6E6E6" offset="52.2460938%"></stop>
+            <stop stop-color="#A6E6E6" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" fill="url(#linearGradient-1)" x="-61" y="0" width="608" height="7"></rect>
+    </g>
+</svg>
