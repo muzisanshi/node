@@ -12,7 +12,8 @@ class LCrawler{
 
 		let inCopy = name;
 		// 判断图片名称是否有后缀
-		if(!(inCopy.indexOf(".jpg")>-1) && !(inCopy.indexOf(".png")>-1) && !(inCopy.indexOf(".gif")>-1) && !(inCopy.indexOf(".svg")>-1) 
+		if(!(inCopy.indexOf(".jpg")>-1) && !(inCopy.indexOf(".png")>-1) 
+			&& !(inCopy.indexOf(".gif")>-1) && !(inCopy.indexOf(".svg")>-1) 
 			&& !(inCopy.indexOf(".tif")>-1) && !(inCopy.indexOf(".bmp")>-1)){
 			// 判断返回图片格式
 			switch(type){

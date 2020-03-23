@@ -250,7 +250,23 @@ console.log(c.hasOwnProperty('name'));
 console.log(Object.getOwnPropertyDescriptor(c,'name'));
 
 
+let asf = async function(){
+	await 1;
+	// await setTimeout(()=>{
+	// 	console.log('over1')
+	// },5000)
+	return new Promise((res,rej)=>{
+		// res('over2')
+		setTimeout(()=>{
+			res('over2')
+		},5000)
+	})
+	// return 1;
+}
 
+asf().then(r=>{
+	console.log('返回:' + r)
+})
 
 
 

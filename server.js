@@ -8,13 +8,14 @@ const crypto = require('./modules/hacker/crypto');
 const app = new koa();
 
 
-app.use(koaStatic(__dirname+'/www/dist'));
+// app.use(koaStatic(__dirname+'/www/dist'));
 // app.use(koaStatic('/Users/mac/Documents/HASHREAL/hashreal.front/h5'));
 // app.use(koaStatic('/Users/mac/Documents/HASHREAL/hashreal.front/pc'));
+app.use(koaStatic('/Users/mac/Documents/eface-board/pc/dist'));
 app.use(async (ctx) => {
 	if(ctx.path=="/api/getServerInfo"){
 		ctx.response.status = 200;
-  		ctx.body = 'Hello World';
+  		ctx.body = 'node server';
 	}
 });
 
