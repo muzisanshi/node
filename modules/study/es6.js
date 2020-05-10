@@ -255,18 +255,25 @@ let asf = async function(){
 	// await setTimeout(()=>{
 	// 	console.log('over1')
 	// },5000)
-	return new Promise((res,rej)=>{
-		// res('over2')
-		setTimeout(()=>{
-			res('over2')
-		},5000)
-	})
+	// return new Promise((res,rej)=>{
+	// 	// res('over2')
+	// 	setTimeout(()=>{
+	// 		res('over2')
+	// 	},5000)
+	// })
 	// return 1;
 }
 
-asf().then(r=>{
-	console.log('返回:' + r)
-})
+// asf().then(r=>{
+// 	console.log('返回:' + r)
+// })
+
+let wo = new Number(12);
+console.log('like'.length);
+console.log(typeof 'like');
+console.log(typeof NaN);
+
+
 
 
 
