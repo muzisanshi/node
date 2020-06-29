@@ -6,7 +6,7 @@ class LCrypto {
 
 	// 返回随机生成的16字节的16进制数
 	async getRandomHex(byteNum){
-		return await new Promise((resolve,reject)=>{
+		return await new Promise((resolve,reject) => {
 			crypto.randomBytes(byteNum, (err, buf) => {
 		  		if(err){
 		  			reject(err);
@@ -20,7 +20,7 @@ class LCrypto {
 
 	// 返回随机生成的16字节数据
 	async getRandomBytes(byteNum){
-		return await new Promise((resolve,reject)=>{
+		return await new Promise((resolve,reject) => {
 			crypto.randomBytes(byteNum, (err, buf) => {
 		  		if(err){
 		  			reject(err);
@@ -119,7 +119,7 @@ class LCrypto {
 
 	// 生成rsa非对称加密秘钥，普通字符串
 	async getRsaKeys(){
-		return await new Promise((resolve,reject)=>{
+		return await new Promise((resolve,reject) => {
 			crypto.generateKeyPair('rsa', {
 				modulusLength: 1024,
 				publicKeyEncoding: {
@@ -172,8 +172,8 @@ class LCrypto {
 	saveKeys(privateKey,publicKey){
 		let priPath = `${__dirname}/../keys/private.pem`;
 		let pubPath = `${__dirname}/../keys/public.pem`;
-		fs.writeFile(priPath,privateKey,'utf8',(err)=>{});
-		fs.writeFile(pubPath,publicKey,'utf8',(err)=>{});
+		fs.writeFile(priPath,privateKey,'utf8',(err) => {});
+		fs.writeFile(pubPath,publicKey,'utf8',(err) => {});
 	}
 	
 }

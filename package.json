@@ -26,5 +26,8 @@
     "socket.io": "^2.3.0",
     "vue": "^2.6.11",
     "vue-server-renderer": "^2.6.11"
+  },
+  "devDependencies": {
+    "http2": "^3.3.7"
   }
 }

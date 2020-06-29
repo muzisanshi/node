@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html manifest="all.appcache">
 <head>
 	<meta charset="utf-8">
 	<!-- 浏览器内核选择 -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<!-- 移动端适配 -->
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon" />
 	<title>html5demo</title>
+	<style>
+		:root{
+			--redColor:#ff0000;
+		}
+		.tip{
+			position: relative;
+			line-height: 20px;
+		}
+		.tip:hover:before{
+			content: attr(data-msg);
+			position: absolute;
+			color: var(--redColor);
+			top:-20px;
+			left:0px;
+		}
+		i.angle{
+			display: inline-block;
+			width: 0px;
+			height: 0px;
+			border-left: 10px solid transparent;
+			border-top: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 20px solid blue;
+		}
+		
+		.f0{
+			--myColor:purple;
+			color: var(--myColor);
+		}
+		.f1{
+			--myColor:red;
+			color: var(--myColor);
+		}
+		.f2{
+			--myColor:green;
+			color: var(--myColor);
+		}
+		.f3{
+			color:var(--myColor);
+		}
+	</style>
 </head>
 <body>
 
@@ -84,10 +126,471 @@
 		var name = "lilei";
 		console.log(name)
 	</code>
-
+	
+	<input placeholder="自动聚焦" autofocus/>
+	
+	<p contenteditable hidden>我可编辑</p>
+	
+	<p contenteditable spellcheck="true">拼写检查</p>
+	
+	<p contenteditable>我可以省略结束标签，牛逼不</p>
+	<img style="width: 100px;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589276647021&di=760d1a9d4f9fb309baa1d2c3bba54797&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn20112%2F320%2Fw640h480%2F20190131%2Ff18d-hshmsti7101522.jpg"/>
+	
+	<p class="tip" data-msg="你好呀！">你好</p>
+	
+	<i class="angle"></i>
+	
+	<mark>fuck</mark>
+	
+	<progress value="50" max="100"></progress>
+	
+	<p style="width: 100px;">fuckfuckfuckfuckfuckfuck<wbr/>fuck</p>
+	
+	<command onclick="alert('command')" label="cut"/>
+	
+	<input type="week"/>
+	
+	<del>你大爷的</del>
+	<ins>嘿嘿</ins>
+	
+	<input type="text" required/>
+	
+	<form id="test">
+		<!-- <fieldset name="set"> -->
+			<input name="name" type="text" required pattern="^[A-Za-z]+$" />
+			<input name="phone" type="number" required />
+			<input name="file" type="file" multiple />
+			<input type="submit" value="提交"/>
+		<!-- </fieldset> -->
+	</form>
+	
+	<div id="fake">
+		<p class="p1">p1</p>
+		<p class="p1">p1</p>
+		<p class="p2">p2</p>
+		<p>p2</p>
+	</div>
+	
+	<div id="css3">
+		<label>label</label>
+		<p>ppp</p>
+		<div>divdiv</div>
+		<span>like</span>
+	</div>
+	
+	<div class="css4">
+		<span>css4</span>
+	</div>
+	
+	<div hidden>我可以隐藏</div>
+	
+	<div class="status">
+		<button disabled>disabled</button>
+		<input readonly placeholder="readonly input" value="readonly"/>
+		<input placeholder="readwrite input" value="readwrite"/>
+		<input type="radio" checked />
+	</div>
+	
+	<div class="select">我去你大爷的，来选我啊</div>
+	
+	<div class="brothers">
+		<p>brother</p>
+		<label>brother</label>
+	</div>
+	<img id="logo" src="./image/favicon.ico" alt="logo"/>
+	<style>
+		[id=dl]{
+			color: red;
+		}
+		/* [id*=tes]{
+			color: red;
+		} */
+		/* [id^=tes]{
+			color: red;
+		} */
+		/* [id$=est]{
+			color: red;
+		} */
+		#fake::before{
+			content:'fuck';
+			color:blue;
+		}
+		#fake::after{
+			content:' you';
+			color:red;
+		}
+		#fake::first-line{
+			content:' you';
+			color:yellow;
+		}
+		#fake::first-letter{
+			content:' you';
+			color:black;
+		}
+		#fake p:not(.p2){
+			color: green;
+		}
+		/* #fake p:empty{
+			border: 5px solid red;
+		} */
+		#fake p:nth-child(odd){
+			border: 5px solid red;
+		}
+		#fake p:nth-child(even){
+			border: 5px solid blue;
+		}
+		#css3 p:nth-child(3){
+			color: green;
+		}
+		/* #css3 label:nth-of-type(1){
+			color: green;
+		} */
+		#css3 label:nth-child(2n+1){
+			color: green;
+		}
+		.css4 span:only-child{
+			color: #0000FF;
+		}
+		.status button:disabled{
+			color: red;
+		}
+		.status input:read-only{
+			color: red;
+		}
+		.status input:read-write{
+			color: green;
+		}
+		.status input[type=radio]:not(:checked){
+			background: red;
+			opacity: 0.5;
+		}
+		.select::selection{
+			color: red;
+		}
+		.brothers p+label{
+			color: red;
+		}
+		.brothers:before,
+		.brothers:after{
+			content: url(./image/favicon.ico);
+		}
+		#logo:after{
+			content: attr(alt);
+		}
+		
+	</style>
+	<dl id="dl">
+		<dt>你大爷</dt>
+		<dd>最大爷</dd>
+	</dl>
+	
+	<!-- <iframe id="child" width="400" height="400" src="http://192.168.43.137:8089/home.html"></iframe> -->
+	<a href="home.html" target="_blank">home页面</a>
+	
+	<style>
+		.float{
+			background: black;
+			height: 40px;
+		}
+		.float::before{
+			content: none;
+			clear: both;
+		}
+		.float .float-item{
+			float: left;
+			width: 100px;
+			height: 20px;
+		}
+		.float .float-item:nth-of-type(odd){
+			background:red;
+		}
+		.float .float-item:nth-of-type(even){
+			background:green;
+		}
+		.list-item{
+			color: blue;
+			display: list-item;
+			list-style-type: -moz-circle;
+		}
+	</style>
+	<div class="float">
+		<div class="float-item"></div>
+		<div class="float-item fuck"></div>
+		<div class="float-item"></div>
+		<div class="float-item"></div>
+		<div class="float-item"></div>
+	</div>
+	
+	<div class="list">
+		<div class="list-item">list-item</div>
+		<div class="list-item">list-item</div>
+		<div class="list-item">list-item</div>
+	</div>
+	
+	<style>
+		.runin{
+			display: run-in;
+			color: red;
+		}
+		.compact{
+			display: compact;
+			color: blue;
+			margin-left: 100px;
+		}
+		.box-shadow{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			box-shadow: 0px 5px 5px #0000FF;
+		}
+		.box-sizing{
+			width: 100px;
+			height: 100px;
+			/* box-sizing: border-box; */
+			box-sizing: content-box;
+			background: red;
+			border: 5px solid blue;
+			padding: 20px;
+			margin: 20px;
+			position: relative;
+		}
+		.box-sizing span{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: green;
+			position: absolute;
+			top:0px;
+			left:0px;
+		}
+		.absolute{
+			position: absolute;width: 100px;height: 100px;background: yellowgreen;top: 0px;left: 0px;
+		}
+		.rotate{
+			display: inline-block;
+			/* transform-origin: left bottom; */
+			transform: rotate(45deg);
+			background: green;
+		}
+		.skew{
+			display: inline-block;
+			background: red;
+			transform: skew(-10deg,0);
+		}
+		.trans{
+			width: 100px;
+			height: 100px;
+			background: red;
+			transition: transform 5s linear;
+		}
+		
+		@keyframes ani{
+			0%{
+				background: green;
+			}
+			50%{
+				background: red;
+			}
+			100%{
+				background: green;
+			}
+		}
+		.animation{
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin-top: 100px;
+		}
+		.ani{
+			animation: ani 5s linear;
+			animation-iteration-count: infinite;
+		}
+		
+		@media (min-width: 601px) {
+			.flex{
+				display: flex;
+				flex-direction: row;
+			}
+			.flex .fi{
+				height: 100px;
+			}
+			.flex .fi:nth-of-type(1){
+				height: 100px;
+				flex:1;
+			}
+			.flex .fi:nth-of-type(2){
+				height: 100px;
+				flex:2;
+			}
+			.flex .fi:nth-of-type(3){
+				height: 100px;
+				width: 50%;
+			}
+			.flex .fi:nth-of-type(odd){
+				background:red;
+			}
+			.flex .fi:nth-of-type(even){
+				background:green;
+			}
+		}
+		
+		@media (max-width: 600px) {
+			.flex .fi{
+				height: 100px;
+				width: 100%;
+			}
+			.flex .fi:nth-of-type(odd){
+				background:red;
+			}
+			.flex .fi:nth-of-type(even){
+				background:green;
+			}
+		}
+		.hls{
+			width: 100px;
+			height: 100px;
+			background: hsl(120,100%,30%);
+			outline: 4px solid red;
+			outline-offset: 4px;
+			border:2px solid blue;
+		}
+		.reset{
+			outline: initial;
+		}
+		.margin-combine{
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			background: red;
+			/* border: 0.1px solid green; */
+			/* overflow: hidden; */
+		}
+		.margin-combine::before{
+			content: '';
+			display: table;
+		}
+		.margin-combine .margin-son{
+			width: 50px;
+			height: 50px;
+			background: green;
+			margin-top: 20px;
+			/* border: 4px solid black; */
+		}
+		/* .margin-combine:first-child{
+			width: 100px;
+			height: 100px;
+			margin: 0px;
+			background: red;
+		} */
+		.jquery{
+			box-sizing: border-box;
+			border: 4px solid black;
+			padding: 20px;
+			background: red;
+			margin: 20px;
+			display: inline-block;
+		}
+		.jquery > .jquery-son{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			margin-bottom: 0px;
+			border: 4px solid black;
+		}
+	
+	</style>
+	
+	<div class="margin-combine">
+		<div class="margin-son"></div>
+	</div>
+	<div class="margin-combine"></div>
+	
+	<div class="runin-compact">
+		<label class="runin">runin,</label>
+		<label class="compact">compact</label>
+	</div>
+	<div class="box-shadow">
+		<div class="son"></div>
+	</div>
+	<div class="box-sizing">
+		<span>fuck</span>
+	</div>
+	<div class="absolute">
+		<span></span>
+	</div>
+	<div class="rotate">rotate</div>
+	<div class="skew">skew</div>
+	<div class="trans"></div>
+	<div class="animation"></div>
+	<div class="flex">
+		<div class="fi"></div>
+		<div class="fi"></div>
+		<div class="fi"></div>
+	</div>
+	<div class="hls reset"></div>
+	<div class="jquery">
+		<div class="jquery-son"></div>
+	</div>
+	
+	<div class="f0">f0</div>
+	<div class="f1">
+		f1
+		<div class="f2">
+			f2
+			<div class="f3">
+				f3
+			</div>
+		</div>
+	</div>
+	
 </body>
 <script type="text/javascript">
+	window.addEventListener('message', function (e) {
+	  console.log(e.data);
+	}, false);
 	window.onload = function(){
+		console.log($('.jquery').width());
+		console.log($('.jquery').innerWidth());
+		console.log($('.jquery').outerWidth());
+		console.log($('.jquery').outerWidth(true));
+		// console.log($('div:contains("absolute")').length);
+		// console.log($('.absolute:has("span")').length);
+		// console.log($('[class^=abs]').length);
+		// console.log($(':disabled').length);
+		// console.log(document.querySelectorAll('.box-shadow').length)
+		// console.log($('div.float-item').filter('.fuck').length)
+		// console.log($('div.float-item').filter('.fuck').map(function(){
+		// 	return 'fuck';
+		// }).get().join())
+		// console.log($('div.fuck').prev().length)
+		// console.log($('div.fuck').prevAll().length)
+		// console.log($('div.fuck').nextAll().length)
+		// console.log($('div.fuck').siblings().length)
+		
+		// $('.trans').addClass('rotate');
+		// $('.trans').css({
+		// 	'transform':'rotate(45deg)'
+		// })
+		
+		// $('.animation').addClass('ani');
+		// setTimeout(() => {
+		// 	$('.animation').removeClass('ani');
+		// },10000)
+		
+		// console.log('fuck')
+		// console.log(document.getElementById('child').contentWindow.postMessage)
+		// window.frames[0].postMessage("hello,i'm home",'*');
+		// window.postMessage("hello,i'm demo",'*');
+		// http://192.168.43.137:8089/html5demo.html
+		// setTimeout(() => {
+			// document.getElementById('child').contentWindow.postMessage("hello,i'm home",'*');
+		// },5000)
+		// document.getElementById('child').contentWindow.postMessage("hello,i'm home",'*');
+		// document.getElementById('test').addEventListener('submit',function(e){
+			// e.preventDefault();
+			// return false;
+		// })
+		
 		// if(navigator.geolocation){
 		// 	navigator.geolocation.getCurrentPosition(function(location){
 		// 		alert("经纬度:"+location.coords.longitude+","+location.coords.latitude)
@@ -120,15 +623,16 @@
 		// }, null);
 		// });
 
-		var worker = new Worker('http://10.0.0.123:8081/js/worker.js');
-		worker.onmessage = function (event) {
-	  		console.log('Received message ' + event.data);
-	  		worker.postMessage("我是来自主线程的消息")
+		// var worker = new Worker('http://192.168.43.137:8089/js/worker.js');
+		// worker.onmessage = function (event) {
+	  		// console.log('Received message:' + event.data);
+	  		// worker.postMessage("我是来自主线程的消息")
 	  		// 关闭worker
 	  		// worker.terminate();
-		};
-
-
+		// };
+		
+		
 	}
 </script>
+<script src="./js/jquery-3.4.1.min.js"></script>
 </html>

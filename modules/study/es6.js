@@ -1,3 +1,5 @@
+const crypto = require('../hacker/crypto');
+
 let {a:{b}} = {a:{b:"fuck"}};
 let [{c:cv,d = "fuck you you"}] = [{c:"fuck you",d:"nice"}];
 let [e = "default"] = ["like"];
@@ -161,10 +163,11 @@ let timeout = async function(){
 	console.log("after timeout3");
 	return "ok"
 };
-// let p = timeout();
-// p.then((r)=>{
-// 	// console.log(r);
-// })
+let p = timeout();
+p.then((r)=>{
+	console.log(r);
+})
+console.log('async over')
 
 // set和map
 let set = new Set([1,2,3,4,5,6,"6"]);
@@ -264,9 +267,50 @@ let asf = async function(){
 	// return 1;
 }
 
-asf().then(r=>{
-	console.log('返回:' + r)
-})
+// asf().then(r=>{
+	// console.log('返回:' + r)
+// })
+
+// 一些验证性的学习
+console.log('--------Function的__proto__--------',Function.__proto__);
+console.log('--------Function的prototype--------',Function.prototype);
+console.log('--------Function的prototype的__proto__--------',Object.getPrototypeOf(Function.prototype));
+// console.log('--------Object的prototype的__proto__--------',Object.prototype.__proto__)
+console.log('--------Object的prototype的__proto__--------',Object.getPrototypeOf(Object.prototype))
+console.log(crypto.md5Encrypt('我是你大爷!'))
+
+console.log('是否是无穷',isFinite(10/3))
+
+// let unde = new Object(undefined);
+// let nu = new Object(null);
+
+c.test = 'hello';
+c.func = function(p1){
+	console.log(this.test);
+	let v;
+	eval('"use strict";let shit;v = "v";console.log(v);');
+	// shit = 'shit';
+	// console.log('shit')
+	// console.log(Object.getOwnPropertyNames(arguments));
+	// console.log(arguments.callee)
+	
+}
+// c.func('p1');
+
+let objOp = {
+	name:'lilei'
+}
+// Object.freeze(objOp)
+// Object.seal(objOp)
+// Object.preventExtensions(objOp)
+// objOp.name = "lilei2"
+// objOp.age = 31
+// console.log(objOp.age)
+
+
+
+
+
 
 
 

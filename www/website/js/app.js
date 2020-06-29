@@ -223,7 +223,7 @@
 	app.prototype.init = function(){
 		if(!this.isSafiri()){
 			$("html").css({
-				fontFamily:"微软雅黑"
+				fontFamily:"Microsoft YaHei,serif,sans-serif"
 			});	
 		}
 	};
