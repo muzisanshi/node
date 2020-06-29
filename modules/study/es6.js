@@ -258,12 +258,12 @@ let asf = async function(){
 	// await setTimeout(()=>{
 	// 	console.log('over1')
 	// },5000)
-	return new Promise((res,rej)=>{
-		// res('over2')
-		setTimeout(()=>{
-			res('over2')
-		},5000)
-	})
+	// return new Promise((res,rej)=>{
+	// 	// res('over2')
+	// 	setTimeout(()=>{
+	// 		res('over2')
+	// 	},5000)
+	// })
 	// return 1;
 }
 
@@ -306,9 +306,6 @@ let objOp = {
 // objOp.name = "lilei2"
 // objOp.age = 31
 // console.log(objOp.age)
-
-
-
 
 
 
